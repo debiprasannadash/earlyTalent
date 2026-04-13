@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Registration | Early Talent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="registration-page">
+
+    <div class="left-panel">
+        <div class="background-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-seedling"></i>
+                <span>EarlyTalent</span>
+            </a>
+        </div>
+
+        <div class="value-prop">
+            <h1>Fresh ideas.<br>Emerging talent.<br>Zero hassle.</h1>
+            <p>Register your business to post micro-tasks, collaborate with ambitious students, and get work done while building your future talent pipeline.</p>
+
+            <ul class="features-list">
+                <li><div class="check-icon"><i class="fa-solid fa-check"></i></div> Cost-effective digital solutions</li>
+                <li><div class="check-icon"><i class="fa-solid fa-check"></i></div> Scout candidates before hiring</li>
+                <li><div class="check-icon"><i class="fa-solid fa-check"></i></div> Support student education via real experience</li>
+            </ul>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Early Talent allowed us to completely redesign our cafe's menus and social media. The students were professional, fast, and highly creative!"</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">MR</div>
+                <div>
+                    <p class="author-name">Mark R.</p>
+                    <p class="author-title">Owner, Daily Grind Cafe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="form-container">
+            <div class="mobile-logo">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Early<span>Talent</span></span>
+            </div>
+
+            <header class="form-header">
+                <h2>Register your Organization</h2>
+                <p>Already have a business account? <a href="login.html">Log in here</a>.</p>
+            </header>
+
+            <form id="businessRegForm" onsubmit="handleRegistration(event)" class="registration-form">
+                
+                <section class="form-section">
+                    <h3>1. Organization Details</h3>
+                    <div class="form-group">
+                        <label>Company Name *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-building"></i>
+                            <input type="text" required placeholder="e.g. TechNova Inc.">
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Industry *</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-industry"></i>
+                                <select required>
+                                    <option value="" disabled selected>Select Industry</option>
+                                    <option>Technology / Software</option>
+                                    <option>Retail / E-commerce</option>
+                                    <option>Food & Beverage</option>
+                                    <option>Marketing / Agency</option>
+                                    <option>Healthcare / Wellness</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Size</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-users"></i>
+                                <select>
+                                    <option>1 - 10 employees (Startup)</option>
+                                    <option>11 - 50 employees</option>
+                                    <option>51 - 200 employees</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Website URL (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-globe"></i>
+                            <input type="url" placeholder="https://www.yourcompany.com">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h3>2. Account Administrator</h3>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" required placeholder="Sarah">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name *</label>
+                            <input type="text" required placeholder="Connor">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Work Email *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" required placeholder="sarah@technova.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" required placeholder="Create a secure password">
+                            <i id="eye-icon" class="fa-regular fa-eye toggle-eye" onclick="togglePassword()"></i>
+                        </div>
+                        <p class="help-text">Must be at least 8 characters.</p>
+                    </div>
+                </section>
+
+                <div class="form-footer">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span class="checkbox-text">
+                            I agree to the <a href="#">Terms of Service</a> and acknowledge that student work is provided for experiential learning purposes.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="submit-btn">
+                        Create Organization Account <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        function handleRegistration(event) {
+            event.preventDefault();
+            alert("Registration Successful! Welcome to Early Talent. Redirecting you to your business dashboard...");
+            window.location.href = "business-dashboard.html";
+        }
+    </script>
+</body>
+</html>
