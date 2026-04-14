@@ -4,263 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Dashboard | Early Talent</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+  
 </head>
-<body class="dashboard-body">
 
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <i class="fa-solid fa-seedling text-indigo"></i>
-            <span class="logo-text">Early<span class="text-indigo">Talent</span></span>
-        </div>
-        <div class="sidebar-label">Business Panel</div>
-        <nav class="sidebar-nav">
-            <a href="#" class="nav-item active">
-                <i class="fa-solid fa-layer-group"></i> Dashboard
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fa-solid fa-list-check"></i> My Tasks
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fa-solid fa-users"></i> Candidates
-            </a>
-            <a href="#" class="nav-item">
-                <i class="fa-solid fa-gear"></i> Settings
-            </a>
-        </nav>
-        <div class="sidebar-footer">
-            <div class="user-profile">
-                <div class="avatar">SM</div>
-                <div class="user-info">
-                    <p class="company-name">TechNova Inc.</p>
-                    <p class="user-name">Sarah Manager</p>
-                </div>
-            </div>
-        </div>
-    </aside>
+<body>
 
-    <main class="main-content">
-        <header class="top-header">
-            <h1 class="page-title">Task Management</h1>
-            <div class="header-actions">
-                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
-                <button onclick="openModal('createTaskModal')" class="btn btn-primary">
-                    <i class="fa-solid fa-plus"></i> Post New Task
-                </button>
-            </div>
-        </header>
-
-        <div class="content-wrapper">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-label">Active Tasks</span>
-                    <span class="stat-value">4</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Pending Applications</span>
-                    <span class="stat-value text-blue">12</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Awaiting Review</span>
-                    <span class="stat-value text-orange">1</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Completed & Awarded</span>
-                    <span class="stat-value text-green">8</span>
-                </div>
-            </div>
-
-            <div class="table-container">
-                <div class="table-header">
-                    <h2>All Tasks</h2>
-                    <div class="search-box">
-                        <i class="fa-solid fa-search"></i>
-                        <input type="text" placeholder="Search tasks...">
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Task Name</th>
-                                <th>Category</th>
-                                <th>Status</th>
-                                <th>Applicants/Assignee</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id="task-row-1">
-                                <td>
-                                    <strong>Redesign Landing Page</strong><br>
-                                    <small>Posted 2 days ago</small>
-                                </td>
-                                <td>Web Design</td>
-                                <td><span class="badge badge-blue">Open for Apps</span></td>
-                                <td>5 Applicants</td>
-                                <td class="text-right actions-cell">
-                                    <button onclick="openModal('applicantsModal')" class="btn-sm btn-light">View Applicants</button>
-                                    <button class="icon-btn-sm"><i class="fa-solid fa-pen"></i></button>
-                                    <button onclick="deleteTask(1)" class="icon-btn-sm text-red"><i class="fa-solid fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong>Write 3 SEO Blog Posts</strong><br>
-                                    <small>Due in 4 days</small>
-                                </td>
-                                <td>Content Writing</td>
-                                <td><span class="badge badge-yellow">In Progress</span></td>
-                                <td>
-                                    <div class="user-inline">
-                                        <div class="avatar-xs">JD</div>
-                                        <span>Jane Doe</span>
-                                    </div>
-                                </td>
-                                <td class="text-right actions-cell">
-                                    <button class="icon-btn-sm"><i class="fa-solid fa-comment-dots"></i></button>
-                                </td>
-                            </tr>
-                            <tr class="row-highlight">
-                                <td>
-                                    <strong>Design Social Media Template</strong><br>
-                                    <small class="text-orange">Action Required</small>
-                                </td>
-                                <td>Graphic Design</td>
-                                <td><span class="badge badge-orange">Submitted</span></td>
-                                <td>
-                                    <div class="user-inline">
-                                        <div class="avatar-xs bg-green">MS</div>
-                                        <span>Mike Smith</span>
-                                    </div>
-                                </td>
-                                <td class="text-right actions-cell">
-                                    <button onclick="openModal('reviewModal')" class="btn-sm btn-orange">Review Work</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div id="modalOverlay" class="modal-overlay hidden"></div>
-
-    <div id="createTaskModal" class="modal hidden">
-        <div class="modal-header">
-            <h3>Post a New Task</h3>
-            <button onclick="closeModal('createTaskModal')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="modal-body">
-            <form class="modal-form">
-                <div class="form-group">
-                    <label>Task Title</label>
-                    <input type="text" placeholder="e.g. Design a modern logo">
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Category</label>
-                        <select>
-                            <option>Graphic Design</option>
-                            <option>Web Design</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Deadline</label>
-                        <input type="date">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea rows="4"></textarea>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button onclick="closeModal('createTaskModal')" class="btn btn-ghost">Cancel</button>
-            <button onclick="alert('Task Published!'); closeModal('createTaskModal');" class="btn btn-primary">Publish Task</button>
-        </div>
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Early<span class="highlight">Talent</span></span>
     </div>
 
-    <div id="applicantsModal" class="modal hidden">
-        <div class="modal-header">
-            <h3>Review Candidates</h3>
-            <button onclick="closeModal('applicantsModal')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="modal-body p-0">
-            <div class="list-item">
-                <div class="item-main">
-                    <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=6366f1&color=fff" class="avatar-md">
-                    <div>
-                        <h4>Alex Johnson <span class="badge badge-yellow">Level 4</span></h4>
-                        <p>Experienced with Figma and rebuilding layouts.</p>
-                    </div>
-                </div>
-                <button onclick="assignTask()" class="btn btn-dark">Assign Task</button>
-            </div>
+    <div class="section-title">Business Panel</div>
+
+    <nav>
+        <a class="active"><i class="fa-solid fa-layer-group"></i> Dashboard</a>
+        <a><i class="fa-solid fa-list-check"></i> My Tasks</a>
+        <a><i class="fa-solid fa-users"></i> Candidates</a>
+        <a><i class="fa-solid fa-gear"></i> Settings</a>
+    </nav>
+
+    <div class="profile">
+        <div class="avatar">SM</div>
+        <div>
+            <p class="company">TechNova Inc.</p>
+            <p class="name">Sarah Manager</p>
         </div>
     </div>
+</aside>
 
-    <div id="reviewModal" class="modal hidden">
-        <div class="modal-header bg-orange-light">
-            <h3>Review Student Submission</h3>
-            <button onclick="closeModal('reviewModal')" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+<!-- Main -->
+<main class="main">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Task Management</h1>
+        <div class="actions">
+            <i class="fa-regular fa-bell"></i>
+            <button onclick="openModal('createTaskModal')">
+                <i class="fa-solid fa-plus"></i> Post New Task
+            </button>
         </div>
-        <div class="modal-body">
-            <div class="submission-card">
-                <p>"Attached are the 3 templates requested. Let me know if you need revisions!"</p>
-                <div class="file-list">
-                    <div class="file-tag"><i class="fa-solid fa-file-image"></i> template_1.png</div>
-                </div>
-            </div>
-            <div class="rating-section">
-                <h4>Rate & Reward</h4>
-                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
-            </div>
+    </header>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="card">
+            <p>Active Tasks</p>
+            <h2>4</h2>
         </div>
-        <div class="modal-footer">
-            <button class="btn-link text-red">Request Revision</button>
-            <button onclick="approveAndReward()" class="btn btn-green"><i class="fa-solid fa-trophy"></i> Approve & Award</button>
+        <div class="card">
+            <p>Pending Applications</p>
+            <h2 class="blue">12</h2>
         </div>
-    </div>
+        <div class="card">
+            <p>Awaiting Review</p>
+            <h2 class="orange">1</h2>
+        </div>
+        <div class="card">
+            <p>Completed & Awarded</p>
+            <h2 class="green">8</h2>
+        </div>
+    </section>
 
-    <script>
-        const overlay = document.getElementById('modalOverlay');
+    <!-- Table -->
+    <section class="table-container">
+        <div class="table-header">
+            <h2>All Tasks</h2>
+            <input type="text" placeholder="Search tasks...">
+        </div>
 
-        function openModal(modalId) {
-            overlay.classList.remove('hidden');
-            document.getElementById(modalId).classList.remove('hidden');
-            document.getElementById(modalId).classList.add('active-modal');
-        }
+        <table>
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Applicants</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
 
-        function closeModal(modalId) {
-            overlay.classList.add('hidden');
-            document.getElementById(modalId).classList.add('hidden');
-            document.getElementById(modalId).classList.remove('active-modal');
-        }
+            <tbody>
+                <tr id="task-row-1">
+                    <td>Redesign Landing Page</td>
+                    <td>Web Design</td>
+                    <td><span class="badge blue">Open</span></td>
+                    <td>5 Applicants</td>
+                    <td>
+                        <button onclick="openModal('applicantsModal')">View</button>
+                        <button onclick="deleteTask(1)">Delete</button>
+                    </td>
+                </tr>
 
-        overlay.addEventListener('click', () => {
-            ['createTaskModal', 'applicantsModal', 'reviewModal'].forEach(id => closeModal(id));
-        });
+                <tr>
+                    <td>Write SEO Blogs</td>
+                    <td>Content Writing</td>
+                    <td><span class="badge yellow">In Progress</span></td>
+                    <td>Jane Doe</td>
+                    <td>-</td>
+                </tr>
 
-        function deleteTask(id) {
-            if(confirm("Are you sure?")) {
-                document.getElementById('task-row-' + id).style.display = 'none';
-            }
-        }
+                <tr class="highlight-row">
+                    <td>Social Media Template</td>
+                    <td>Graphic Design</td>
+                    <td><span class="badge orange">Submitted</span></td>
+                    <td>Mike Smith</td>
+                    <td>
+                        <button onclick="openModal('reviewModal')">Review</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-        function assignTask() {
-            closeModal('applicantsModal');
-            alert("Success! Candidate assigned.");
-        }
+</main>
 
-        function approveAndReward() {
-            closeModal('reviewModal');
-            alert("🎉 Task Completed & Certificate Awarded!");
-        }
-    </script>
+<!-- MODALS -->
+<div id="modalOverlay" class="overlay"></div>
+
+<div id="createTaskModal" class="modal">
+    <h3>Post a New Task</h3>
+    <input placeholder="Task Title">
+    <textarea placeholder="Description"></textarea>
+    <button onclick="closeModal('createTaskModal')">Close</button>
+</div>
+
+<div id="applicantsModal" class="modal">
+    <h3>Applicants</h3>
+    <button onclick="assignTask()">Assign</button>
+</div>
+
+<div id="reviewModal" class="modal">
+    <h3>Review Task</h3>
+    <button onclick="approveAndReward()">Approve</button>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
