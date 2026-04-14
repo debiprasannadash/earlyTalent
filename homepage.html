@@ -3,134 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Early Talent | Real Work. Real Experience.</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Early Talent</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+ 
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-wrapper">
-            <div class="logo">
-                <i class="fa-solid fa-seedling"></i>
-                <span>Early<span class="text-indigo">Talent</span></span>
-            </div>
-            <div class="nav-links">
-                <a href="#">Explore Tasks</a>
-                <a href="#">For Businesses</a>
-                <a href="#">For Students</a>
-            </div>
-            <div class="nav-btns">
-                <a href="#" class="login-link">Log In</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
-            </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">
+            <i class="fa-solid fa-seedling"></i>
+            Early<span>Talent</span>
         </div>
-    </nav>
 
-    <section class="hero">
-        <div class="container text-center">
-            <h1 class="hero-title">
-                Build your portfolio with <br><span class="gradient-text">real-world experience.</span>
-            </h1>
-            <p class="hero-subtitle">
-                Connect with small businesses, complete real tasks, and earn verified credentials. Step out of the classroom and into the workplace.
-            </p>
-            <div class="hero-actions">
-                <a href="#" class="btn btn-primary btn-lg">
-                    <i class="fa-solid fa-graduation-cap"></i> I'm a Student
-                </a>
-                <a href="#" class="btn btn-outline btn-lg">
-                    <i class="fa-solid fa-briefcase"></i> I'm a Business
-                </a>
-            </div>
+        <div class="nav-links">
+            <a href="#">Explore Tasks</a>
+            <a href="#">For Businesses</a>
+            <a href="#">For Students</a>
         </div>
-    </section>
 
-    <section class="categories container">
-        <div class="section-header text-center">
-            <h2>Gaining experience has never been easier</h2>
-            <p>Small businesses post micro-tasks. You choose what you want to work on, collaborate with peers, and build your skills.</p>
+        <div class="nav-actions">
+            <a href="#" class="login">Log In</a>
+            <a href="#" class="btn-primary">Get Started</a>
         </div>
-        
-        <div class="category-grid">
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container center">
+        <h1>
+            Build your portfolio with <br>
+            <span>real-world experience.</span>
+        </h1>
+
+        <p>
+            Connect with small businesses, complete real tasks, and earn verified credentials.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn-primary"><i class="fa-solid fa-graduation-cap"></i> Student</button>
+            <button class="btn-secondary"><i class="fa-solid fa-briefcase"></i> Business</button>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+    <div class="container center">
+        <h2>Gaining experience has never been easier</h2>
+        <p class="subtext">Choose tasks and build skills</p>
+
+        <div class="grid">
             <div class="card">
-                <div class="icon-box icon-blue"><i class="fa-solid fa-laptop-code"></i></div>
+                <i class="fa-solid fa-laptop-code"></i>
                 <h3>Website Design</h3>
-                <p>Design landing pages, mockups, and UI/UX improvements for local startups.</p>
+                <p>Design UI/UX for startups</p>
             </div>
+
             <div class="card">
-                <div class="icon-box icon-purple"><i class="fa-solid fa-pen-nib"></i></div>
-                <h3>Graphic & Logo Design</h3>
-                <p>Create brand identities, logos, and event posters for real businesses.</p>
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Graphic Design</h3>
+                <p>Create logos and branding</p>
             </div>
+
             <div class="card">
-                <div class="icon-box icon-green"><i class="fa-solid fa-keyboard"></i></div>
+                <i class="fa-solid fa-keyboard"></i>
                 <h3>Content Writing</h3>
-                <p>Draft blog posts, newsletters, and website copy that actually gets published.</p>
+                <p>Write blogs and newsletters</p>
             </div>
-            <div class="card card-accent">
-                <div class="icon-box icon-glass"><i class="fa-solid fa-arrow-right"></i></div>
-                <h3>View All Categories</h3>
-                <p>Explore hundreds of live tasks waiting for your talent.</p>
-            </div>
-        </div>
-    </section>
 
-    <section class="gamification">
-        <div class="container gamification-wrapper">
-            <div class="gamification-content">
-                <span class="label">Reward-Based Learning</span>
-                <h2>Level up your career like you level up in games.</h2>
-                <p>Every task you complete earns you points, badges, and verified portfolio credits.</p>
-                <ul class="feature-list">
-                    <li><i class="fa-solid fa-medal"></i> Earn role-specific badges</li>
-                    <li><i class="fa-solid fa-users"></i> Collaborate in squads</li>
-                </ul>
+            <div class="card">
+                <i class="fa-brands fa-instagram"></i>
+                <h3>Social Media</h3>
+                <p>Create content & reels</p>
             </div>
-            <div class="profile-mockup">
-                <div class="profile-card">
-                    <div class="level-badge">Level 12!</div>
-                    <div class="profile-header">
-                        <div class="avatar">JD</div>
-                        <div>
-                            <h3>Jane Doe</h3>
-                            <p class="text-indigo">Junior UI/UX Designer</p>
-                        </div>
-                    </div>
-                    <div class="stats">
-                        <div class="stat"><strong>24</strong><small>Tasks</small></div>
-                        <div class="stat"><strong>4.9</strong><small>Rating</small></div>
-                        <div class="stat"><strong>12k</strong><small>EXP</small></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo"><i class="fa-solid fa-seedling"></i> EarlyTalent</div>
-                <p>Bridging the gap between the classroom and the workplace.</p>
+            <div class="card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Marketing</h3>
+                <p>SEO & campaigns</p>
             </div>
-            <div class="footer-links">
-                <h4>Platform</h4>
-                <a href="#">Browse Tasks</a>
-                <a href="#">How it Works</a>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
+
+            <div class="card highlight">
+                <i class="fa-solid fa-arrow-right"></i>
+                <h3>View All</h3>
             </div>
         </div>
-        <div class="copyright text-center">
-            &copy; 2023 Early Talent Work Platform.
+    </div>
+</section>
+
+<!-- GAMIFICATION -->
+<section class="gamification">
+    <div class="container flex">
+        <div class="left">
+            <h2>Level up your career</h2>
+            <p>Earn points, badges and build portfolio.</p>
+
+            <ul>
+                <li><i class="fa-solid fa-medal"></i> Earn badges</li>
+                <li><i class="fa-solid fa-users"></i> Collaborate</li>
+                <li><i class="fa-solid fa-check-double"></i> Verified portfolio</li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="profile-card">
+            <h3>Jane Doe</h3>
+            <p>UI Designer</p>
+
+            <div class="stats">
+                <div><strong>24</strong><span>Tasks</span></div>
+                <div><strong>4.9</strong><span>Rating</span></div>
+                <div><strong>12k</strong><span>EXP</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Early Talent</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
