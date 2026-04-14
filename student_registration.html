@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Early Talent</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LEFT PANEL -->
+<div class="left-panel">
+    <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>EarlyTalent</span>
+    </div>
+
+    <div class="content">
+        <h1>Build your resume before you graduate.</h1>
+        <p>Complete real tasks and earn verified badges.</p>
+
+        <div class="features">
+            <div><i class="fa-solid fa-medal"></i> Earn Badges</div>
+            <div><i class="fa-solid fa-briefcase"></i> Real Experience</div>
+        </div>
+    </div>
+</div>
+
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+
+    <div class="form-container">
+
+        <h2>Create your Student Profile</h2>
+
+        <form id="studentRegForm" onsubmit="handleRegistration(event)">
+
+            <!-- Names -->
+            <div class="grid">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email Address" required>
+                <p id="email-error" class="error">Invalid email</p>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <i id="eye-icon" class="fa-regular fa-eye toggle" onclick="togglePassword()"></i>
+            </div>
+
+            <!-- College -->
+            <input type="text" placeholder="University (Optional)">
+
+            <!-- Select -->
+            <select required>
+                <option value="">Select your field</option>
+                <option>Web Development</option>
+                <option>Design</option>
+                <option>Marketing</option>
+            </select>
+
+            <!-- Terms -->
+            <label class="terms">
+                <input type="checkbox" required>
+                I agree to terms
+            </label>
+
+            <button type="submit">Start Building My Portfolio</button>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
