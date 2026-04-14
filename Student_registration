@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Early Talent</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-white flex min-h-screen">
+
+    <!-- LEFT PANEL: Gamification & Value Prop (Hidden on Mobile) -->
+    <!-- Notice the vibrant purple gradient for the student side -->
+    <div class="hidden lg:flex lg:w-5/12 bg-gradient-to-br from-purple-700 via-indigo-600 to-blue-600 text-white flex-col justify-between p-12 relative overflow-hidden">
+        
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-pink-500 blur-3xl"></div>
+            <div class="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-blue-400 blur-3xl"></div>
+        </div>
+
+        <!-- Logo -->
+        <div class="relative z-10">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition w-max">
+                <i class="fa-solid fa-seedling text-white text-3xl"></i>
+                <span class="font-bold text-3xl tracking-tight text-white">EarlyTalent</span>
+            </a>
+        </div>
+
+        <!-- Copy/Value Prop -->
+        <div class="relative z-10 mt-12 mb-auto">
+            <div class="inline-block bg-white/20 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-white/30">
+                <i class="fa-solid fa-gamepad mr-1"></i> Level Up Your Career
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                Build your resume<br>before you graduate.
+            </h1>
+            <p class="text-indigo-100 text-lg mb-8 max-w-md">
+                Stop applying for entry-level jobs that require 3 years of experience. Complete real tasks, earn verified badges, and build a portfolio employers actually want to see.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white/10 p-4 rounded-xl border border-white/20 backdrop-blur-sm">
+                    <i class="fa-solid fa-medal text-yellow-400 text-2xl mb-2"></i>
+                    <h4 class="font-bold text-sm">Earn Badges</h4>
+                    <p class="text-xs text-indigo-100 mt-1">Unlock skill levels as you complete tasks.</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl border border-white/20 backdrop-blur-sm">
+                    <i class="fa-solid fa-briefcase text-blue-300 text-2xl mb-2"></i>
+                    <h4 class="font-bold text-sm">Real Experience</h4>
+                    <p class="text-xs text-indigo-100 mt-1">Work with actual small businesses.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Testimonial -->
+        <div class="relative z-10 mt-8 flex items-center gap-4">
+            <img src="https://ui-avatars.com/api/?name=Jessica+Chen&background=fff&color=4f46e5" class="w-12 h-12 rounded-full border-2 border-white/50">
+            <div>
+                <p class="text-sm font-medium text-white italic">"I landed my first internship purely because of the portfolio I built on Early Talent."</p>
+                <p class="text-xs text-indigo-200 mt-1 font-bold">— Jessica C., Level 8 Web Designer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL: Registration Form -->
+    <div class="w-full lg:w-7/12 flex flex-col items-center justify-center p-8 sm:p-12 lg:p-16 h-screen overflow-y-auto">
+        <div class="w-full max-w-xl">
+            
+            <!-- Mobile Logo (Hidden on Desktop) -->
+            <div class="lg:hidden flex items-center gap-2 mb-8">
+                <i class="fa-solid fa-seedling text-indigo-600 text-3xl"></i>
+                <span class="font-bold text-3xl tracking-tight text-gray-900">Early<span class="text-indigo-600">Talent</span></span>
+            </div>
+
+            <!-- Header -->
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Create your Student Profile</h2>
+            <p class="text-gray-500 mb-8">Already have an account? <a href="login.html" class="text-purple-600 font-semibold hover:underline">Log in here</a>.</p>
+
+            <!-- Form -->
+            <form id="studentRegForm" onsubmit="handleRegistration(event)" class="space-y-6">
+                
+                <!-- Section 1: Personal Details -->
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 space-y-4">
+                    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-gray-200 pb-2 mb-4">1. The Basics</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                            <input type="text" required class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition" placeholder="Jordan">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                            <input type="text" required class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition" placeholder="Smith">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Address * <span class="text-xs text-gray-400 font-normal">(.edu preferred but not required)</span></label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-regular fa-envelope text-gray-400"></i></div>
+                            <input type="email" required class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition" placeholder="jordan@university.edu">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-solid fa-lock text-gray-400"></i></div>
+                            <input type="password" id="password" required class="w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition" placeholder="Create a secure password">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer" onclick="togglePassword()">
+                                <i id="eye-icon" class="fa-regular fa-eye text-gray-400 hover:text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Education & Interests -->
+                <div class="bg-purple-50/50 p-6 rounded-2xl border border-purple-100 space-y-4">
+                    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-purple-200 pb-2 mb-4">2. Your Skills & Education</h3>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">University / College (Optional)</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-solid fa-graduation-cap text-gray-400"></i></div>
+                            <input type="text" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition" placeholder="State University">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">What do you want to gain experience in? *</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fa-solid fa-crosshairs text-gray-400"></i></div>
+                            <select required class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 outline-none transition appearance-none bg-white">
+                                <option value="" disabled selected>Select your primary path...</option>
+                                <option>Graphic & UI/UX Design</option>
+                                <option>Web Development & IT</option>
+                                <option>Content Writing & Copywriting</option>
+                                <option>Social Media & Marketing</option>
+                                <option>Data Entry & Research</option>
+                            </select>
+                        </div>
+                        <p class="text-xs text-purple-600 mt-2 font-medium"><i class="fa-solid fa-circle-info mr-1"></i> We'll recommend tasks based on this choice. You can change this later.</p>
+                    </div>
+                </div>
+
+                <!-- Terms and Submit -->
+                <div class="pt-2">
+                    <label class="flex items-start gap-3 mb-6 cursor-pointer group">
+                        <input type="checkbox" required class="mt-1 rounded border-gray-300 text-purple-600 focus:ring-purple-600 cursor-pointer">
+                        <span class="text-sm text-gray-600 group-hover:text-gray-900 transition">
+                            I agree to the <a href="#" class="text-purple-600 font-medium hover:underline">Student Code of Conduct</a> and understand that I am earning portfolio experience, not financial compensation.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="w-full bg-gray-900 text-white font-bold text-lg py-3.5 rounded-xl hover:bg-purple-700 transition-colors shadow-lg">
+                        Start Building My Portfolio <i class="fa-solid fa-rocket ml-2"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Handle Form Submission Mockup
+        function handleRegistration(event) {
+            event.preventDefault(); // Prevent page reload
+            
+            // Trigger confetti or success message
+            alert("Account created successfully! Welcome to Early Talent. Redirecting to your Student Dashboard...");
+            
+            // In a real app, you would redirect to the student dashboard
+            // window.location.href = "student-dashboard.html";
+        }
+    </script>
+</body>
+</html>
