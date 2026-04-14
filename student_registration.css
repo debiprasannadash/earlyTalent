@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 40%;
+    background: linear-gradient(to bottom right, #6d28d9, #4f46e5);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.features div {
+    margin-top: 10px;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grid {
+    display: flex;
+    gap: 10px;
+}
+
+.grid input {
+    flex: 1;
+}
+
+/* INPUT */
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-group {
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* ERROR */
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+/* TERMS */
+.terms {
+    font-size: 14px;
+}
+
+/* BUTTON */
+button {
+    background: #111827;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
