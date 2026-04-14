@@ -4,78 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Early Talent</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
-    <main class="login-container">
-        <header class="logo-area">
-            <a href="index.html" class="brand-logo">
-                <i class="fa-solid fa-seedling"></i>
-                <span class="logo-text">Early<span class="accent">Talent</span></span>
-            </a>
-            <h2 id="welcome-text">Welcome back, Student!</h2>
-            <p class="subtitle">Ready to level up your portfolio?</p>
-        </header>
+<!-- Logo -->
+<div class="logo-section">
+    <a href="#">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Early<span class="highlight">Talent</span></span>
+    </a>
 
-        <div class="card">
-            <div class="tabs">
-                <button id="tab-student" onclick="switchTab('student')" class="tab-btn active">
-                    <i class="fa-solid fa-graduation-cap"></i> Student
-                </button>
-                <button id="tab-business" onclick="switchTab('business')" class="tab-btn">
-                    <i class="fa-solid fa-briefcase"></i> Business
-                </button>
-            </div>
+    <h2 id="welcome-text">Welcome back, Student!</h2>
+    <p>Ready to level up your portfolio?</p>
+</div>
 
-            <form class="login-form" action="#" method="POST">
-                <input type="hidden" id="user-role" name="role" value="student">
+<!-- Login Card -->
+<div class="login-container">
+    <div class="card">
 
-                <div class="input-group">
-                    <label for="email">Email address</label>
-                    <div class="input-wrapper">
-                        <i class="fa-regular fa-envelope field-icon"></i>
-                        <input id="email" name="email" type="email" required placeholder="you@example.com">
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <div class="label-row">
-                        <label for="password">Password</label>
-                        <a href="#" class="link-small">Forgot password?</a>
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-lock field-icon"></i>
-                        <input id="password" name="password" type="password" required placeholder="••••••••">
-                    </div>
-                </div>
-
-                <button type="submit" id="submit-btn" class="btn-primary">
-                    Sign in as Student
-                </button>
-            </form>
-
-            <div class="divider">
-                <span>Or continue with</span>
-            </div>
-
-            <div class="social-logins">
-                <button class="btn-social">
-                    <i class="fa-brands fa-google google-icon"></i> Google
-                </button>
-                <button class="btn-social">
-                    <i class="fa-brands fa-linkedin linkedin-icon"></i> LinkedIn
-                </button>
-            </div>
+        <!-- Tabs -->
+        <div class="tabs">
+            <button id="tab-student" onclick="switchTab('student')" class="tab active">
+                <i class="fa-solid fa-graduation-cap"></i> Student
+            </button>
+            <button id="tab-business" onclick="switchTab('business')" class="tab">
+                <i class="fa-solid fa-briefcase"></i> Business
+            </button>
         </div>
 
-        <p class="footer-text">
-            Don't have an account? <a href="#" class="link-bold">Create one now</a>
-        </p>
-    </main>
+        <!-- Form -->
+        <form>
 
-    <script src="script.js"></script>
+            <!-- Email -->
+            <div class="input-group">
+                <label>Email address</label>
+                <div class="input-box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <div class="label-row">
+                    <label>Password</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button id="submit-btn" class="btn-primary">
+                Sign in as Student
+            </button>
+        </form>
+    </div>
+
+    <!-- Signup -->
+    <p class="signup-text">
+        Don't have an account?
+        <a href="#">Create one now</a>
+    </p>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
