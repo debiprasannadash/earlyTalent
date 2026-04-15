@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | Early Talent</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        Early<span>Talent</span>
+    </div>
+
+    <div class="profile">
+        <div class="profile-top">
+            <img src="https://ui-avatars.com/api/?name=Jordan+Smith">
+            <div class="lvl">Lvl 4</div>
+        </div>
+        <p class="name">Jordan Smith</p>
+        <p class="role">UI/UX Design</p>
+
+        <div class="exp-bar">
+            <div class="exp-fill"></div>
+        </div>
+        <small>3,500 / 5,000 EXP</small>
+    </div>
+
+    <nav>
+        <a class="active"><i class="fa-solid fa-layer-group"></i> Dashboard</a>
+        <a><i class="fa-solid fa-magnifying-glass"></i> Find Tasks</a>
+        <a><i class="fa-solid fa-folder-open"></i> My Submissions</a>
+        <a><i class="fa-solid fa-trophy"></i> Rewards</a>
+    </nav>
+</aside>
+
+<!-- Main -->
+<main class="main">
+
+<header>
+    <h1>Welcome back, Jordan! 🚀</h1>
+    <button onclick="openModal('profileModal')">Update Profile</button>
+</header>
+
+<section class="stats">
+    <div class="card">Total Submissions <h2>12</h2></div>
+    <div class="card">Tasks in Progress <h2>2</h2></div>
+    <div class="card">EXP Earned <h2>3,500</h2></div>
+    <div class="card">Certificates <h2>4</h2></div>
+</section>
+
+<section class="tasks">
+    <h2>Recommended For You</h2>
+
+    <div class="task-card">
+        <h3>Redesign Cafe Menu</h3>
+        <p>Modern UI redesign for coffee shop menu.</p>
+        <span>Due in 5 days</span>
+        <button onclick="openModal('applyModal','Redesign Cafe Menu')">Apply</button>
+    </div>
+
+    <div class="task-card">
+        <h3>Create App Onboarding Screens</h3>
+        <p>Design onboarding screens.</p>
+        <span>Due in 7 days</span>
+        <button onclick="openModal('applyModal','Create App Onboarding Screens')">Apply</button>
+    </div>
+</section>
+
+<section class="rewards">
+    <h2>Certificates</h2>
+    <div class="reward-card">Brand Identity Cert</div>
+    <div class="reward-card">Level 4 Designer</div>
+    <div class="reward-card">HTML/CSS Mockup</div>
+</section>
+
+</main>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Apply Modal -->
+<div id="applyModal" class="modal">
+    <h3>Apply for Task</h3>
+    <p id="modalTaskTitle"></p>
+    <textarea placeholder="Why are you a good fit?"></textarea>
+    <button onclick="submitApplication()">Submit</button>
+</div>
+
+<!-- Profile Modal -->
+<div id="profileModal" class="modal">
+    <h3>Update Profile</h3>
+    <input type="text" value="Jordan">
+    <input type="text" value="Smith">
+    <button onclick="saveProfile()">Save</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
